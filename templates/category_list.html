@@ -20,16 +20,11 @@
                       <h4>{{ item.title}}</h4>
                       <span class="collection">Item Id:<br><strong>{{ item.pk }}</strong></span>
                       <span class="category">Category:<br><strong>{{ item.category}}</strong></span>
-                      <div class="main-button">
-                        <a href="{% url 'liberty:detail' item.pk %}">Explore {{ item.title }}</a>
-                      </div>
-                    </div>
-                  </div>
-                        <a href="{% url 'liberty:item-like' item.pk %}" class="card-link">
+                                                <a href="{% url 'liberty:item-like' item.pk %}" class="card-link">
 
             {% if request.user.is_authenticated %}
 
-                {% if item|check_like:request.user %}
+                {% if Item|check_like:request.user %}
                     <i class="fa-solid fa-heart"></i>
                 {% else %}
                     <i class="fa-regular fa-heart"></i>
@@ -39,6 +34,12 @@
                 <i class="fa-regular fa-heart"></i>
             {% endif %}
         </a>
+
+                      <div class="main-button">
+                        <a href="{% url 'liberty:detail' item.pk %}">Explore {{ item.title }}</a>
+                      </div>
+                    </div>
+                  </div>
 
                     {% endfor %}
                 </div>

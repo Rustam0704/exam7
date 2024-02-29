@@ -58,5 +58,5 @@ class UserLike(AbstractModel):
         return f"{self.author}-{self.user}"
 
 class ItemLike(AbstractModel):
-    User = models.ForeignKey(User, CASCADE, 'likes')
-    Item = models.ForeignKey(Item, CASCADE)
+    user = models.ForeignKey(User, CASCADE, 'likes')
+    item = models.ForeignKey(Item, CASCADE)

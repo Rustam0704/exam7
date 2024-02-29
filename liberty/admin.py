@@ -33,4 +33,4 @@ class CategoryAdmin(admin.ModelAdmin):
         verbose_name = "Category"
 @admin.register(ItemLike)
 class ItemLikeAdmin(admin.ModelAdmin):
-    list_display = ["Item"]
+    list_display = ["item"]
