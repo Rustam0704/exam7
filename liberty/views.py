@@ -190,4 +190,4 @@ class LikeItemView(LoginRequiredMixin, View):
         like, created = ItemLike.objects.get_or_create(user=request.user, item=item)
         if not created:
             like.delete()
-        return redirect(reverse("liberty:category_list", kwargs={"pk": item.category.pk}))
+        return redirect(reverse("liberty:category_list", kwargs={"pk": item.pk}))
